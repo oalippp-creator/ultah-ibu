@@ -1,0 +1,375 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================
+   BODY / BACKGROUND
+========================= */
+
+body {
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #ffb6b9,
+        #f8c8dc,
+        #d8b4e2
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 15px;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: 100%;
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+
+/* =========================
+   KARTU HALAMAN DEPAN
+========================= */
+
+#home {
+    background: white;
+
+    width: 100%;
+
+    padding: 35px 30px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15);
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   HALAMAN UCAPAN
+========================= */
+
+#message {
+    background: white;
+
+    width: 100%;
+
+    padding: 40px 30px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   JUDUL
+========================= */
+
+h1 {
+    color: #e75480;
+
+    font-size: 32px;
+
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #e75480;
+
+    font-size: 28px;
+
+    margin-top: 25px;
+}
+
+
+/* =========================
+   TULISAN
+========================= */
+
+p {
+    color: #444;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   TANGGAL
+========================= */
+
+.tanggal {
+    color: #888;
+
+    font-size: 15px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   KUE ULANG TAHUN
+========================= */
+
+.cake-container {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin: 10px auto 25px;
+
+    overflow: hidden;
+}
+
+
+.cake {
+    display: block;
+
+    width: 360px;
+
+    max-width: 85%;
+
+    height: auto;
+
+    margin: 0 auto;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   TOMBOL
+========================= */
+
+button {
+    padding: 13px 22px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #ff69b4;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+
+button:hover {
+    background: #ff1493;
+
+    transform: scale(1.05);
+}
+
+
+button:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================
+   BUNGA
+========================= */
+
+.bunga {
+    font-size: 35px;
+
+    margin-top: 20px;
+
+    margin-bottom: 0;
+}
+
+
+/* =========================
+   PESAN TERSEMBUNYI
+========================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================
+   RESPONSIVE HP
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px 10px;
+    }
+
+    #home,
+    #message {
+        padding: 25px 18px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 23px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+.cake {
+        width: 300px;
+
+        max-width: 90%;
+    }
+
+    button {
+        font-size: 14px;
+
+        padding: 12px 18px;
+}
+}
+/* =========================
+   ANIMASI PESAN
+========================= */
+
+#message {
+    opacity: 0;
+    transform: scale(0.8) translateY(30px);
+    transition: all 0.8s ease;
+}
+
+#message.show {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+
+/* =========================
+   HATI TERBANG
+========================= */
+
+.floating-heart {
+    position: fixed;
+
+    bottom: -50px;
+
+    pointer-events: none;
+
+    z-index: 999;
+
+    animation: hatiNaik 5s linear forwards;
+}
+
+
+@keyframes hatiNaik {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+
+}
+/* =========================
+   ANIMASI PESAN SATU-SATU
+========================= */
+
+.pesan-1,
+.pesan-2,
+.pesan-3,
+.pesan-4,
+.pesan-5 {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+
+/* Saat pesan mulai muncul */
+
+#message.show .pesan-1 {
+    animation: munculPesan 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+#message.show .pesan-2 {
+    animation: munculPesan 1s ease forwards;
+    animation-delay: 1.5s;
+}
+
+#message.show .pesan-3 {
+    animation: munculPesan 1s ease forwards;
+    animation-delay: 2.5s;
+}
+
+#message.show .pesan-4 {
+    animation: munculPesan 1s ease forwards;
+    animation-delay: 3.5s;
+}
+
+#message.show .pesan-5 {
+    animation: munculPesan 1s ease forwards;
+    animation-delay: 4.5s;
+}
+
+
+/* Animasi */
+
+@keyframes munculPesan {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+}
+
+}
