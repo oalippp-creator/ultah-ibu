@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Untuk Ibu ❤️</title>
+
+    <link rel="stylesheet" href="syle.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- =========================
+             HALAMAN DEPAN
+        ========================== -->
+
+        <div id="home">
+
+            <h1>🎉 Selamat Ulang Tahun, Ibu! 🎉</h1>
+
+            <p class="tanggal">
+                08 SEPTEMBER ❤️
+            </p>
+
+            <!-- KUE -->
+            <div class="cake-container">
+
+                <div class="cake">
+                    🎂
+                </div>
+
+            </div>
+
+            <p>
+                Ada sesuatu yang ingin aku sampaikan untuk Ibu...
+            </p>
+
+            <button onclick="bukaKejutan()">
+                Klik untuk membuka kejutan 🎁
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             HALAMAN UCAPAN
+        ========================== -->
+
+        <div id="message" class="hidden">
+
+            <h2 class="pesan-1">
+                ❤️ Selamat Ulang Tahun, Ibu ❤️
+            </h2>
+
+            <p class="pesan-2">
+                Terima kasih karena Ibu selalu ada untukku,
+                selalu memberikan kasih sayang, perhatian,
+                dan doa yang terbaik.
+            </p>
+
+            <p class="pesan-3">
+                Maaf kalau selama ini aku masih sering membuat
+                Ibu kesal atau belum bisa menjadi anak yang sempurna.
+            </p>
+
+            <p class="pesan-4">
+                Semoga Ibu selalu diberikan kesehatan,
+                kebahagiaan, umur yang panjang,
+                dan selalu berada dalam lindungan Allah SWT.
+            </p>
+
+            <p class="pesan-5">
+                Aku sayang Ibu ❤️
+                <br>
+                Terima kasih untuk semuanya. 🌸
+            </p>
+
+            <div class="bunga">
+                🌸 🌷 🌹 🌺
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        function bukaKejutan() {
+
+            // Sembunyikan halaman depan
+            document.getElementById("home").style.display = "none";
+
+            // Tampilkan halaman ucapan
+            const message = document.getElementById("message");
+
+            message.classList.remove("hidden");
+
+            // Jalankan animasi
+            setTimeout(function () {
+                message.classList.add("show");
+            }, 50);
+
+            // Jalankan hati terbang
+            buatHati();
+
+        }
+
+
+        // =========================
+        // HATI TERBANG
+        // =========================
+
+        function buatHati() {
+
+            setInterval(function () {
+
+                const heart = document.createElement("div");
+
+                heart.classList.add("floating-heart");
+
+                heart.innerHTML = "❤️";
+
+                heart.style.left =
+                    Math.random() * 100 + "vw";
+
+                heart.style.fontSize =
+                    (Math.random() * 20 + 15) + "px";
+
+                document.body.appendChild(heart);
+
+                setTimeout(function () {
+                    heart.remove();
+                }, 5000);
+
+            }, 700);
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+```
